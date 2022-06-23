@@ -1,0 +1,52 @@
+﻿<Page x:Class="SIMSProjekat.ShowUsers"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SIMSProjekat"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ShowUsers">
+
+    <Grid Background="White">
+        <Button Content="Logout" Click="Button_Click1"  HorizontalAlignment="Left" Margin="718,22,0,0" VerticalAlignment="Top" Width="56"/>
+        <TextBlock Name="ime" HorizontalAlignment="Left" Margin="50,22,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock Name="prezime" HorizontalAlignment="Left" Margin="113,22,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock Name="tip" HorizontalAlignment="Left" Margin="182,22,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <DataGrid Name="UsersDataGrid" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding Path=usersObservable}" Margin="182,151,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Width="*" Binding ="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn  Header="Surname" Width="*" Binding ="{Binding Surname }"></DataGridTextColumn>
+                <DataGridTextColumn  Header="Email" Width="*" Binding ="{Binding Email}"></DataGridTextColumn>
+                <DataGridTextColumn  Header="Jmbg" Width="*" Binding ="{Binding Jmbg}"></DataGridTextColumn>
+                <DataGridTextColumn  Header="Phone number" Width="*" Binding ="{Binding PhoneNumber}"></DataGridTextColumn>
+                <DataGridTextColumn  Header="Type" Width="*" Binding ="{Binding TypeOfUser}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Block user" Click="BlockUser"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Unblock user" Click="Unblock"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button  Content="Show medicines" HorizontalAlignment="Left" Margin="0,154,0,0" VerticalAlignment="Top" Width="182" Click="Button_Click" Height="54"/>
+        <Button Content="Register new users" HorizontalAlignment="Left" Margin="491,20,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.512,0.672" Width="112" Click="ButtonBase_OnClick"/>
+        <Button Content="Show users" IsEnabled ="False"  HorizontalAlignment="Left" Margin="0,208,0,0" VerticalAlignment="Top" Width="182" Height="51"/>
+        <ComboBox SelectionChanged="Sortby_OnSelectionChanged" HorizontalAlignment="Left" Name="sortby" Margin="454,116,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="454,96,0,0" TextWrapping="Wrap" Text="Sort by" VerticalAlignment="Top"/>
+        <ComboBox Name="sorttype" SelectionChanged="Sorttype_OnSelectionChanged" HorizontalAlignment="Left" Margin="597,116,0,0" VerticalAlignment="Top" Width="67"/>
+        <TextBlock HorizontalAlignment="Left" Margin="597,99,0,0" TextWrapping="Wrap" Text="Sort type" VerticalAlignment="Top"/>
+        <ComboBox Name="filtriranje" SelectionChanged="Filtriranje_OnSelectionChanged" HorizontalAlignment="Left" Margin="236,116,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="236,96,0,0" TextWrapping="Wrap" Text="Filter by" VerticalAlignment="Top"/>
+
+
+    </Grid>
+</Page>

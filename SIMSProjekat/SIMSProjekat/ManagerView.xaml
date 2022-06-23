@@ -1,0 +1,53 @@
+﻿<Page x:Class="SIMSProjekat.ManagerView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SIMSProjekat"
+        mc:Ignorable="d"
+        Title="ManagerView" Height="450" Width="800">
+    <Grid Background="White">
+        <Button Content="Logout" HorizontalAlignment="Left" Margin="719,18,0,0" VerticalAlignment="Top" Width="56" Click="Button_Click_3"/>
+        <TextBlock Name="ime" HorizontalAlignment="Left" Margin="50,22,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock Name="prezime" HorizontalAlignment="Left" Margin="113,22,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock Name="tip" HorizontalAlignment="Left" Margin="182,22,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <DataGrid AutoGenerateColumns="False" Name="MedicineDataGrid" IsReadOnly="True" Margin="182,151,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn SortMemberPath="s" Header="Medicine id" Width="*" Binding ="{Binding MedicineId}"></DataGridTextColumn>
+                <DataGridTextColumn  Header="Medicine name" Width="*" Binding ="{Binding MedicineName }"></DataGridTextColumn>
+                <DataGridTextColumn  Header="Manufactor" Width="*" Binding ="{Binding Manufactor}"></DataGridTextColumn>
+                <DataGridTextColumn  Header="Quantity" Width="*" Binding ="{Binding Quantity}"></DataGridTextColumn>
+                <DataGridTextColumn  Header="Price" Width="*" Binding ="{Binding Price}"></DataGridTextColumn>
+                <DataGridTextColumn  Header="Quantity in storage" Width="*" Binding ="{Binding QuantityInStorage}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Components" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="See components" Click="ButtonBase_OnClick"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Nabavka" Click="ButtonBase_OnClick3"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Add new medicine" HorizontalAlignment="Left" Margin="638,114,0,0" VerticalAlignment="Top" Width="109" Click="Button_Click_2"/>
+        <Button  Content="Show users" HorizontalAlignment="Left" VerticalAlignment="Top" Width="183" Click="Button_Click_1" Height="56" Margin="0,211,0,0"/>
+        <Button Content="Register new users" HorizontalAlignment="Left" Margin="518,18,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.512,0.672" Width="112" Click="Button_Click"/>
+        <TextBox KeyUp="Pretrazi_OnKeyUp" Name="pretrazi" HorizontalAlignment="Left" Margin="308,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" Height="21"/>
+        <ComboBox SelectionChanged="Searchby_OnSelected" Name="searchby" HorizontalAlignment="Left" Margin="183,115,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBlock  HorizontalAlignment="Left" Margin="183,93,0,0" TextWrapping="Wrap" Text="Search by" VerticalAlignment="Top" Width="80"/>
+        <TextBox Name="min" KeyUp="Min_OnKeyUp" Visibility="Hidden"  HorizontalAlignment="Left" Margin="309,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62"/>
+        <TextBox Name="max" KeyUp="Max_OnKeyUp" Visibility="Hidden" HorizontalAlignment="Left" Margin="371,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62" Height="19"/>
+        <TextBlock  Name="minprice" Visibility="Hidden" HorizontalAlignment="Left" Margin="309,97,0,0" TextWrapping="Wrap" Text="Min price" VerticalAlignment="Top"/>
+        <TextBlock  Name="maxprice" Visibility="Hidden" HorizontalAlignment="Center" Margin="0,95,0,0" TextWrapping="Wrap" Text="Max price" VerticalAlignment="Top" Width="58"/>
+        <Button Content="Show medicines" HorizontalAlignment="Left" Margin="0,151,0,0" VerticalAlignment="Top" IsEnabled="False"  Height="60" Width="182"/>
+        <ComboBox SelectionChanged="Sortby_OnSelectionChanged" HorizontalAlignment="Left" Name="sortby" Margin="454,116,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="454,96,0,0" TextWrapping="Wrap" Text="Sort by" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>
