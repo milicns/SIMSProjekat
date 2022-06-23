@@ -20,6 +20,7 @@
                 <DataGridTextColumn  Header="Manufactor" Width="*" Binding ="{Binding Manufactor}"></DataGridTextColumn>
                 <DataGridTextColumn  Header="Quantity" Width="*" Binding ="{Binding Quantity}"></DataGridTextColumn>
                 <DataGridTextColumn  Header="Price" Width="*" Binding ="{Binding Price}"></DataGridTextColumn>
+                <DataGridTextColumn  Header="Quantity in storage" Width="*" Binding ="{Binding QuantityInStorage}"></DataGridTextColumn>
                 <DataGridTemplateColumn Header="Components" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

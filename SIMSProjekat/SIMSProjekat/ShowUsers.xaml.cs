@@ -79,6 +79,7 @@ namespace SIMSProjekat
         {
             User u = (User)UsersDataGrid.SelectedItem;
             uc.BlockUser(u.Jmbg);
+            MessageBox.Show("User is blocked");
 
         }
 
@@ -86,6 +87,7 @@ namespace SIMSProjekat
         {
             User u = (User)UsersDataGrid.SelectedItem;
             uc.UnblockUser(u.Jmbg);
+            MessageBox.Show("User is unblocked");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

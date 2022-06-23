@@ -31,7 +31,7 @@
                 <DataGridTemplateColumn Header="" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Unblock user" Click="Unblock"></Button>
+                            <Button Content="Unblock user"  Click="Unblock"></Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
